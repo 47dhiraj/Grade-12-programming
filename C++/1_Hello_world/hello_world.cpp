@@ -1,15 +1,16 @@
 // Helloworld program in c++
 
-#include <iostream>			// iostream header file is include to import all I/O stream library like cin, cout, endl, ws, cerr, clog, flush etc
+#include <iostream>		// iostream header file is include to import all I/O stream library like cin, cout, endl, ws, cerr, clog, flush etc
 
 using namespace std;		// to use all features from standard library without needing to type std::  each time (for eg: To use only cout, instead of std::cout )
+
 
 
 // main() is the entry point of every c++ program
 // int is the return type of main() function (which means, it return integer value to the OS, when the execution of program finishes.)
 
-int main(){
-	
+int main()
+{
 	cout << "\n" << "Hello World !" << "\n";
 	
 	// cin.get();			// to hold the console screen until one key is pressed
@@ -24,16 +25,24 @@ int main(){
 //int main(){
 
 //	cout << "\nHello World !" << endl;
-
 //	cin.get();
-
 //	// return 0; 			// return 0; is optional in latest c++ compiler version
 
 //}
 
 
 
-// IMP. NOTES
+// IMPORTANT NOTES
+
+
+// <<  --> Insertion Operator / Put To operator
+// <<, inserts data into the stream to print it on the console as output.
+// for eg: cout << "Hello World !!";
+
+// >> --> Extraction Operator
+// >>, it extracts data from i/o stream and stor in a variable.
+// cin >> x;
+
 
 
 // iostream is a header file to be used on top of c++ program.
@@ -46,5 +55,5 @@ int main(){
 
 
 
-// to use all features from standard library without needing to type std::  each time (for eg: To use only cout, instead of std::cout )
+// using namespace std; to use all features from standard library without needing to type std::  each time (for eg: To use only cout, instead of std::cout )
 
