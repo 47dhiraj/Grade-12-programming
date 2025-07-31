@@ -10,12 +10,15 @@ using namespace std;
 
 int main() 
 {
+	
     // conversion of built in data types (eg: int, float, double etc)
 
     
+    
+    
     // Implicit Type Conversion (automatically handles by the compiler)
     
-    // In implicit type conversion, Lower-ranked types are automatically converted/promoted to higher-ranked types while doing calculation/operations.
+    // In implicit type conversion, only Lower-ranked types are automatically converted/promoted to higher-ranked types while doing calculation/operations and vice-versa is not possible.
     
 	// For eg:  Char --> Int --> Long --> Float --> Double --> Long Double
     
@@ -34,9 +37,16 @@ int main()
 	// // For checking data type of variable
 	cout << "\nType of a: " << typeid(a).name() << endl;
 	cout << "\nType of b: " << typeid(b).name() << endl;
-	cout << "\nType of num: " << typeid(num).name() << endl;
-
-
+	cout << "\nType of num after adding both int & float type: " << typeid(num).name() << endl;
+	
+	
+	// 
+	float x = 99.95;
+	int y = 100;
+	
+	cout << "\nType after adding both float & int type: " << typeid(x + y).name() << endl;
+	
+	
     // Example 2: Character to Integer (Implicitly converting char to int(i.e ASCII value))
     
 	char ch1 = 'A';   				// ASCII of A is 65
@@ -51,23 +61,54 @@ int main()
 	int num4 = ch4;
 	cout << num3 << endl << num4 << endl << endl;     				
 
-
-
-
-	// Manual(Custom) Type Casting
 	
-	// Used to convert highh ranked data type to low ranked data type
+	// So basically got to learn that, implicit type conversion is automatically handle by the compiler itself, not by a programmer.
 	
-	// Example 1: Float to Integer
+
+
+
+
+	// Explicit/Manual/Custom Type Casting (High ranked to low ranked & also low ranked to high)
+	
+	// Generally, used to convert high ranked data type to low ranked data type.
+	// And, also can be used to convert low ranked data type to high ranked data type.
+	
+	// In explicit/custom type conversion, a programmer is able to handle which type to convert to what.
+	
+	
+	// Example 1: Float to Integer (High ranked to low ranked)
+	// Here, u are going to lose precision values or digits after decimal.
 	
 	float c = 69.50;
 	
 	int d = int(c);
 	// int d = (int)c;
 	
+	cout << "\nValue of c: " << c << endl;
+	cout << "\nValue of d: " << d << endl;
+	
 	// // For checking data type of variable
 	cout << "\nType of c: " << typeid(c).name() << endl;
-	cout << "\nType of d: " << typeid(d).name() << endl;
+	cout << "\nType of d: " << typeid(d).name() << endl << endl;
+	
+
+	
+	
+	// Example 2: Integer to Float (Low ranked to high ranked)
+	// Here, u are not going to lose precision values or digits after decimal.
+	
+	int e = 96.99;
+	
+	float f = float(e);
+	// float f = (float)e;
+
+	cout << "\n\nValue of e: " << e << endl;
+	cout << "\nValue of f: " << f << endl;
+	
+	
+	// // For checking data type of variable
+	cout << "\nType of e: " << typeid(e).name() << endl;
+	cout << "\nType of f: " << typeid(f).name() << endl;
 
 
 
