@@ -14,10 +14,10 @@ int main()
 	int age = 28;
 	
 	// for long integers
-    long long postalcode = 44605;
+    long postalcode = 44605L;
 	
 	// for very long integer - for very large integers
-    long long mobile = 9779811111111;
+    long long mobile = 9779811111111L;
 	
 	// for float or decimal value (can hold upto 6 precision digits(digits after . or decimal symbol))
 	float height = 5.8888f;
