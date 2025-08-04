@@ -9,10 +9,13 @@ class Employee
 {
     // by default, member haru private huncha,, so id and count are private
     int id;
+    
     static int count;                   // count chai static member of Employee class
                                         // generally, static variable(eg: count) is not object variable, it's a class variable(i.e sabai object ko lagi count ko value common huncha)
-                                        
+         
+		                                
     public:                             // public access modifier
+    
         void setData(void)
         {
             cout << "Enter the id : " << endl;
@@ -24,14 +27,14 @@ class Employee
 
         void getData(void)
         {
-            cout << "The id of this employee is " << id << " and this is employee number " << count << endl;
+            cout << "The id of this employee is: " << id << " and the employee number is: " << count << endl;
         }
 
 
         static void getCount(void)              // getCount() is static function of Employee class
         {
             // cout<<id; // throws an error
-            cout << "The value of count is : " << count << endl;
+            cout << "The value of count is: " << count << endl;
         }
 
 };
@@ -40,8 +43,11 @@ class Employee
 int Employee::count;                // static member lai class bahira yesari initialize/define garincha, (i.e by default integer static variable ko value 0 huncha)
 
 
+
+
 int main()
 {
+	
     Employee agent, hitman;         // creting multiple objects at once
 
     agent.setData();
