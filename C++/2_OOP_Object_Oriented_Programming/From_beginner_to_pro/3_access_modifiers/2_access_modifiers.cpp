@@ -1,65 +1,67 @@
 #include<iostream>
 using namespace std;
-class access_specifiers
+
+
+
+class rectangle
 {
-private:
-    int a,b;
-    void getsum()
-    {
-        cout<<"Enter the two number to get sum"<<endl;
-        cin>>a>>b;
-    }
-    void display()
-    {
-        cout<<"Sum="<<a+b<<endl;
-    }
-public:
-    int l,B,result;
-    void callsum();
+    // Private members cannot be accessed directly outside class or cannot access directly from main()
+    
+    int length, breadth, area;				// private members: length, breadth, area
 
-protected:
-    int c,d;
-    void getdiff()
-    {
-        cout<<"Enter two number to get difference"<<endl;
-        cin>>c>>d;
-
-    }
-    void print()
-    {
-        cout<<"diff="<<c-d;
-
-    }
-
+	public:
+	    // Public methods — accessible from outside the class
+	
+	    void setData(int a, int b);
+	
+	    int calculate();
+	
+	    void display(int);
 };
-void access_specifiers::callsum()
+
+
+
+// setting value of private members (i.e length and breadth)
+void rectangle::setData(int a, int b)
 {
-    getsum();
-     display();
+    length = a;
+    breadth = b;
 }
-class A: public access_specifiers
+
+
+// calculating area using private members (i.e length and breadth)
+int rectangle::calculate()
 {
-    public:
-    void Abc()
-    {
-
-    getdiff();
-
-    print();
-    }
-
-};
+    area = length * breadth;
+    
+    return area; 					// area returned to main()
+}
 
 
+// Displaying the calcualted area
+void rectangle::display(int d)
+{
+    area = d;
+    
+    cout << "calcualted area = " << area;
+}
+
+
+
+// main entry or exit point of the program
 int main()
 {
-    access_specifiers o1;
-    A obj;
-    o1.callsum();
-    cout<<"Enter length and breadth to get area"<<endl;
-    cin>>o1.l>>o1.B;
-    cout<<"Area="<<o1.l*o1.B<<endl;
-    obj.Abc();
+    int calculated_area;
+
+    rectangle obj;         				// Create object of rectangle class
+
+    obj.setData(5, 6);     				// Setting value of private members length=5, breadth=6 via public method
+
+    calculated_area = obj.cal();      	// Calculate area and store in `calculated_area` 
+
+    obj.display(calculated_area);     	// Displaying the calculate area
+    
 
     return 0;
 }
+
